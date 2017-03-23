@@ -59,6 +59,6 @@ names(fullset) <- gsub("std\\(\\)", "std", names(fullset))
 
 ## Creates second dataset with average of each variable for each activity and each subject
 
-secondset <- fullset %>% group_by(activity, subject) %>% summarise_each(funs(mean))
+secondset <- fullset %>% group_by(subject, activity) %>% summarise_each(funs(mean))
 
 
