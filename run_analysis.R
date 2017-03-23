@@ -38,12 +38,13 @@ names(activity_labels)[1] <- "activity"
 ncol(fullset)
 
 ## use descriptive activity name to name the activities in the dataset
-fullset$activity <- merge(fullset, activity_labels, by = "activity")[,564]
+fullset <- merge(fullset, activity_labels, by = "activity")
 
 
 ## select only features with mean and standard deviation
-
-fullset <- select(fullset, subject, activity, index_subfeatures + 2)
+ncol(fullset)
+fullset <- select(fullset, subject, 564, index_subfeatures + 2)
+names(fullset)[2] <- "activity"
 
 ## check number of columns for full set 
 ncol(fullset)
@@ -58,6 +59,6 @@ names(fullset) <- gsub("std\\(\\)", "std", names(fullset))
 
 ## Creates second dataset with average of each variable for each activity and each subject
 
-secondset <- fullset %>% group_by(subject, activity) %>% summarise_each(funs(mean))
+secondset <- fullset %>% group_by(activity, subject) %>% summarise_each(funs(mean))
 
 
