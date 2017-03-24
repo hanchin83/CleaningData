@@ -16,4 +16,5 @@ This is the course project for the Getting and Cleaning Data Coursera course. Fi
 
 6. Name all the features with the correct features.
 
-7. Finally, use `dplyr`'s `group_by()` and `summarise_each()` to obtain the mean for each subject and each activity and store it as 'secondset'. This 'secondset' is the final tidy dataset.
+7. Finally, use `dplyr`'s `group_by()` and `summarise_each()` to obtain the mean for each subject and each activity and store it as `secondset`. This `secondset` is the final tidy dataset.
+
